@@ -1,4 +1,5 @@
 "use client";
+import { v4 as uuidv4 } from "uuid";
 import { ButtonGroup } from "../components/ButtonGroup";
 import DashHeader from "../components/DashboardNavbar";
 import { useAuth, useUser } from "@clerk/nextjs";
@@ -11,10 +12,11 @@ export default function RootLayout({
 }>) {
   const { isSignedIn } = useAuth();
   const { user } = useUser();
+  const id = uuidv4();
 
   useEffect(() => {
-    if (isSignedIn && user) {
-      const saveUser = async () => {
+    const storeTokenAndSaveUser = async () => {
+      if (isSignedIn && user) {
         try {
           const response = await fetch(
             "http://localhost:4000/api/user/register",
@@ -28,6 +30,7 @@ export default function RootLayout({
                 email: user.emailAddresses[0].emailAddress,
                 firstName: user.firstName,
                 lastName: user.lastName,
+                extensionId: id,
               }),
             }
           );
@@ -39,12 +42,12 @@ export default function RootLayout({
             console.error("Error saving user information:", data.message);
           }
         } catch (error) {
-          console.error("Error making API call:", error);
+          console.error("Error making API call or storing token:", error);
         }
-      };
+      }
+    };
 
-      saveUser();
-    }
+    storeTokenAndSaveUser();
   }, [isSignedIn, user]);
 
   return (
