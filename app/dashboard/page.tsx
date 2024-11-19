@@ -1,9 +1,9 @@
 import React from "react";
+import DashboardCardGroup from "../components/CardGroup";
 const Page = () => {
   return (
     <div>
-      hey
-      
+      <DashboardCardGroup />
     </div>
   );
 };

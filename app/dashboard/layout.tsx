@@ -30,7 +30,7 @@ export default function RootLayout({
                 email: user.emailAddresses[0].emailAddress,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                extensionId: id,
+                extensionKey: user.id,
               }),
             }
           );
