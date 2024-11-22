@@ -13,7 +13,7 @@ export function ButtonGroup() {
         <Link href="/dashboard/words" color="green">
           Words
         </Link>
-        <Link href="quizzes" color="green">
+        <Link href="/dashboard/quiz" color="green">
           Quizzes
         </Link>
         <Link href={"deck"} color="green">
