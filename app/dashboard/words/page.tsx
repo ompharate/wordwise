@@ -1,10 +1,12 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 import { Card } from "flowbite-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface props {
   word: string;
+
 }
 const Page = () => {
   const { user } = useUser();
@@ -46,12 +48,13 @@ const Page = () => {
               <div className="min-w-0 flex flex-wrap gap-5">
                 {data &&
                   data?.map((item, index) => (
-                    <div
+                    <Link
+                    href={`/dashboard/words/${item.word}`}
                       key={index}
                       className="truncate text-xl font-medium text-gray-900 bg-gray-300 p-2 rounded-md dark:text-white underline cursor-pointer   "
                     >
                       {item.word}
-                    </div>
+                    </Link>
                   ))}
               </div>
             </div>
