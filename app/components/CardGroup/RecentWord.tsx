@@ -1,6 +1,7 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 import { Card } from "flowbite-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface props {
@@ -37,21 +38,24 @@ export function RecentWords() {
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           Recent Words
         </h5>
-        <a
+        <Link
           href="/dashboard/words"
           className="text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-500"
         >
           View all
-        </a>
+        </Link>
       </div>
       <div className="flow-root">
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           <li className="py-1 sm:py-1">
             <div className="flex items-center space-x-4">
               <div className="min-w-0 flex-1">
-                {data &&    
-                  data?.map((item,index) => (
-                    <p key={index} className="truncate text-xl font-medium text-gray-900 dark:text-white underline cursor-pointer   ">
+                {data &&
+                  data?.map((item, index) => (
+                    <p
+                      key={index}
+                      className="truncate text-xl font-medium text-gray-900 dark:text-white underline cursor-pointer   "
+                    >
                       {item.word}
                     </p>
                   ))}

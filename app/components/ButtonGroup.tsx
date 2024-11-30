@@ -13,12 +13,12 @@ export function ButtonGroup() {
         <Link href="/dashboard/words" color="green">
           Words
         </Link>
-        <Link href="/dashboard/quiz" color="green">
+        {/* <Link href="/dashboard/quiz" color="green">
           Quizzes
         </Link>
         <Link href={"deck"} color="green">
           Deck
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

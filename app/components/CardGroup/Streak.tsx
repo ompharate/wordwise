@@ -1,6 +1,7 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 import { Rating } from "flowbite-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type props = {
@@ -35,12 +36,12 @@ export function Streak() {
         {data?.streak}
       </p>
       <span className="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400" />
-      <a
+      <p
        
         className="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
       >
         Day Streak
-      </a>
+      </p>
     </Rating>
   );
 }
