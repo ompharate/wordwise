@@ -9,7 +9,7 @@ export default function DashHeader() {
   const auth = useAuth();
   return (
     <Navbar className="bg-[#3BC14A] text-white ">
-      <Navbar.Brand as={Link} href="https://flowbite-react.com">
+      <Navbar.Brand as={Link} href="/">
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white ">
           WordWise
         </span>
