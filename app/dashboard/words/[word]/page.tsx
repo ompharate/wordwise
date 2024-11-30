@@ -13,7 +13,7 @@ const WordDetail = () => {
 
   const fetchWordDetails = async () => {
     const response = await fetch(
-      `http://localhost:4000/api/user/word/info?word=${params?.word}`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/word/info?word=${params?.word}`,
       {
         method: "GET",
       }

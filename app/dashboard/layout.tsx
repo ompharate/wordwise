@@ -19,7 +19,7 @@ export default function RootLayout({
       if (isSignedIn && user) {
         try {
           const response = await fetch(
-            "http://localhost:4000/api/user/register",
+            `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/register`,
             {
               method: "POST",
               headers: {

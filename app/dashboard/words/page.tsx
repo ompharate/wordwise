@@ -9,11 +9,12 @@ interface props {
 
 }
 const Page = () => {
+  console.log(`backend url : -${process.env.NEXT_PUBLIC_BACKEND_URL}`)
   const { user } = useUser();
   const [data, setData] = useState<props[] | []>([]);
   async function fetchWordLength() {
     const response = await fetch(
-      `http://localhost:4000/api/user/words?id=${user?.id}`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/words?id=${user?.id}`,
       {
         method: "GET",
       }

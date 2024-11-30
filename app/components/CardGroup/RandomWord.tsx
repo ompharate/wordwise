@@ -13,7 +13,7 @@ const RandomWord = () => {
   const [data, setData] = useState<props>(null);
   async function fetchWordLength() {
     const response = await fetch(
-      `http://localhost:4000/api/user/words/random?id=${user?.id}`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/user/words/random?id=${user?.id}`,
       {
         method: "GET",
       }

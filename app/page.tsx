@@ -1,6 +1,7 @@
 import Header from "./components/Navbar";
 
 export default async function Home() {
+  console.log("backendurl:-",process.env.NEXT_PUBLIC_BACKEND_URL)
   return (
     <div>
       <Header />
